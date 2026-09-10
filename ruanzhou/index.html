@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>软轴泵-软轴水泵原理特点与选型应用指南</title>
+    <meta name="description" content="软轴泵专业资讯平台，深入介绍软轴泵工作原理、结构特点、适用场景与选型要点，提供软轴清水泵、软轴污水泵等产品知识及技术问答。">
+    <meta name="keywords" content="软轴泵,软轴水泵,软轴清水泵,软轴污水泵,软轴泵原理,软轴泵选型,软轴泵价格,软轴泵厂家">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+            background-color: #f4f7fb;
+            color: #2c3e50;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部 */
+        .site-header {
+            background: linear-gradient(135deg, #0d3b66 0%, #1b5a8e 100%);
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo-area h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .logo-area p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+        .header-contact {
+            text-align: right;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.1);
+            padding: 10px 18px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+        .header-contact span {
+            display: block;
+        }
+        .header-contact .phone {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffd166;
+        }
+
+        /* 导航 */
+        .main-nav {
+            background-color: #0a2a44;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        .main-nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .main-nav li {
+            margin: 0;
+        }
+        .main-nav a {
+            display: block;
+            padding: 14px 28px;
+            color: #e0ecff;
+            font-weight: 500;
+            font-size: 1rem;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .main-nav a:hover, .main-nav a.active {
+            background-color: rgba(255,255,255,0.1);
+            color: #ffffff;
+            border-bottom-color: #ffd166;
+        }
+
+        /* 首屏横幅 */
+        .hero {
+            background: linear-gradient(120deg, #e8f0fe 0%, #d4e4f7 100%);
+            padding: 55px 0;
+            border-bottom: 1px solid #cbd5e1;
+        }
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-text h2 {
+            font-size: 2.4rem;
+            color: #0d3b66;
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #334e68;
+            margin-bottom: 25px;
+            max-width: 600px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: #0d3b66;
+            color: #fff;
+            border-color: #0d3b66;
+        }
+        .btn-primary:hover {
+            background: #1b5a8e;
+            border-color: #1b5a8e;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #0d3b66;
+            border-color: #0d3b66;
+        }
+        .btn-outline:hover {
+            background: rgba(13,59,102,0.1);
+            transform: translateY(-2px);
+        }
+        .hero-stats {
+            flex: 1 1 300px;
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            border-left: 6px solid #ffd166;
+        }
+        .hero-stats h3 {
+            font-size: 1.3rem;
+            color: #0d3b66;
+            margin-bottom: 15px;
+        }
+        .hero-stats ul li {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed #cbd5e1;
+        }
+        .hero-stats ul li:last-child {
+            border-bottom: none;
+        }
+        .stat-label {
+            font-weight: 600;
+            color: #334e68;
+        }
+        .stat-value {
+            color: #1b5a8e;
+            font-weight: 700;
+        }
+
+        /* 通用内容区 */
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #0d3b66;
+            margin-bottom: 15px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #ffd166;
+            margin: 10px auto 0;
+            border-radius: 4px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #5b7a99;
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 工作原理 */
+        .principle-section {
+            background: #ffffff;
+        }
+        .principle-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .principle-media {
+            flex: 1 1 350px;
+            background: linear-gradient(145deg, #e3ecf7, #f0f6ff);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: inset 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .principle-media .icon-pump {
+            font-size: 5rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+        .principle-media h3 {
+            color: #0d3b66;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .principle-content {
+            flex: 2 1 450px;
+        }
+        .principle-content h3 {
+            font-size: 1.6rem;
+            color: #0d3b66;
+            margin-bottom: 20px;
+        }
+        .principle-content p {
+            margin-bottom: 18px;
+            color: #334e68;
+        }
+        .feature-list {
+            margin-top: 20px;
+        }
+        .feature-list li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 500;
+        }
+        .feature-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #1b8a5a;
+            font-weight: 700;
+        }
+
+        /* 分类卡片 */
+        .category-section {
+            background: #f4f7fb;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .category-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid #1b5a8e;
+        }
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+        .category-card h3 {
+            font-size: 1.3rem;
+            color: #0d3b66;
+            margin-bottom: 12px;
+        }
+        .category-card p {
+            color: #5b7a99;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .tag {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #1b5a8e;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        /* 选型指南 */
+        .guide-section {
+            background: #fff;
+        }
+        .guide-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .step-item {
+            flex: 1 1 250px;
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+        .step-item:hover {
+            border-color: #1b5a8e;
+            background: #eef4ff;
+        }
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            background: #0d3b66;
+            color: #ffd166;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-radius: 50%;
+            margin-bottom: 18px;
+        }
+        .step-item h4 {
+            color: #0d3b66;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .step-item p {
+            color: #5b7a99;
+            font-size: 0.92rem;
+        }
+
+        /* 应用场景 */
+        .application-section {
+            background: #eef3f8;
+        }
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .app-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 25px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            border-left: 5px solid #ffd166;
+        }
+        .app-icon {
+            font-size: 2rem;
+            background: #f0f6ff;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+        .app-text h3 {
+            color: #0d3b66;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .app-text p {
+            color: #5b7a99;
+            font-size: 0.9rem;
+        }
+
+        /* 注意事项 */
+        .notice-section {
+            background: #fff;
+        }
+        .notice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .notice-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 25px;
+            background: #fbfdff;
+        }
+        .notice-card h3 {
+            color: #c05621;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .notice-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #edf2f7;
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+        .notice-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: #f4f7fb;
+        }
+        .faq-list {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            padding: 20px 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            transition: box-shadow 0.3s;
+        }
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+        }
+        .faq-question {
+            font-weight: 700;
+            color: #0d3b66;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .faq-question::before {
+            content: "Q";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #0d3b66;
+            color: #ffd166;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .faq-answer {
+            color: #4a5568;
+            padding-left: 38px;
+            font-size: 0.95rem;
+        }
+
+        /* CTA区域 */
+        .cta-section {
+            background: linear-gradient(135deg, #0d3b66, #1b5a8e);
+            padding: 50px 0;
+            color: #fff;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .cta-section p {
+            opacity: 0.9;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+        .btn-light {
+            background: #ffd166;
+            color: #0d3b66;
+            border-color: #ffd166;
+            font-weight: 700;
+        }
+        .btn-light:hover {
+            background: #ffc233;
+            transform: translateY(-2px);
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #0a2a44;
+            color: #b0c4de;
+            padding: 40px 0 20px;
+        }
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-about {
+            flex: 2 1 300px;
+        }
+        .footer-about h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .footer-links {
+            flex: 1 1 150px;
+        }
+        .footer-links h4 {
+            color: #ffd166;
+            margin-bottom: 15px;
+        }
+        .footer-links ul li {
+            padding: 5px 0;
+        }
+        .footer-links ul li a:hover {
+            color: #fff;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .header-contact {
+                text-align: center;
+            }
+            .main-nav a {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+            }
+            .hero .container {
+                flex-direction: column;
+            }
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+            .principle-grid {
+                flex-direction: column;
+            }
+            .footer-grid {
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 480px) {
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn {
+                text-align: center;
+            }
+            .main-nav a {
+                padding: 10px 8px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- 头部 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h1>软轴泵</h1>
+                <p>专业软轴泵技术 · 选型 · 应用服务平台</p>
+            </div>
+            <div class="header-contact">
+                <span>咨询热线</span>
+                <span class="phone">400-800-1234</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航 -->
+    <nav class="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">产品中心</a></li>
+                <li><a href="#">工作原理</a></li>
+                <li><a href="#">选型指导</a></li>
+                <li><a href="#">应用案例</a></li>
+                <li><a href="#">技术问答</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h2>高效输送 · 软轴泵解决方案专家</h2>
+                <p>软轴泵凭借其结构紧凑、安装灵活、适应性强等优势，广泛应用于农业灌溉、建筑排水、市政排污及工业输送等多个领域。我们提供全面的软轴泵技术资料与选型支持，助您快速找到合适的输送方案。</p>
+                <div class="btn-group">
+                    <a href="#guide" class="btn btn-primary">获取选型指南</a>
+                    <a href="#principle" class="btn btn-outline">了解工作原理</a>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <h3>软轴泵核心参数速览</h3>
+                <ul>
+                    <li><span class="stat-label">流量范围</span><span class="stat-value">1 ~ 200 m³/h</span></li>
+                    <li><span class="stat-label">扬程范围</span><span class="stat-value">5 ~ 80 m</span></li>
+                    <li><span class="stat-label">适用温度</span><span class="stat-value">-20℃ ~ 120℃</span></li>
+                    <li><span class="stat-label">驱动方式</span><span class="stat-value">电机 / 柴油机</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 工作原理 -->
+    <section class="section principle-section" id="principle">
+        <div class="container">
+            <h2 class="section-title">软轴泵工作原理</h2>
+            <p class="section-sub">了解软轴泵如何通过柔性传动实现高效液体输送</p>
+            <div class="principle-grid">
+                <div class="principle-media">
+                    <span class="icon-pump">⚙️</span>
+                    <h3>柔性传动 · 灵活安装</h3>
+                    <p style="color:#5b7a99; margin-top: 10px;">动力源与泵体分离，通过软轴传递扭矩</p>
+                </div>
+                <div class="principle-content">
+                    <h3>软轴泵的核心结构解析</h3>
+                    <p>软轴泵是一种通过柔性软轴将动力从电机或其他驱动装置传递到泵体叶轮的流体输送设备。其最大的特点在于动力源与泵体之间无需刚性对中连接，而是依靠可弯曲的软轴实现动力传递，这使得泵可以安装在空间受限或难以直接连接的场合。</p>
+                    <p>其工作原理为：驱动电机旋转，通过联轴器带动软轴转动，软轴再将旋转运动传递给泵体内的叶轮。叶轮高速旋转产生离心力，将液体从吸入管吸入并甩向泵壳，最终从出口排出。由于软轴具有良好的挠性，泵体可倾斜、垂直甚至倒置安装，极大提升了安装灵活性。</p>
+                    <ul class="feature-list">
+                        <li>软轴可弯曲，适应复杂安装路径</li>
+                        <li>泵体与电机分离，便于维护检修</li>
+                        <li>结构紧凑，占用空间小</li>
+                        <li>输送介质温度范围广</li>
+                        <li>运转平稳，噪音相对较低</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品分类 -->
+    <section class="section category-section">
+        <div class="container">
+            <h2 class="section-title">软轴泵主要分类</h2>
+            <p class="section-sub">根据输送介质和使用场景，选择最适合您的软轴泵类型</p>
+            <div class="category-grid">
+                <div class="category-card">
+                    <h3>软轴清水泵</h3>
+                    <p>专门用于输送清水或物理化学性质类似于水的清洁液体。适用于家庭取水、农田灌溉、园林浇灌等场合，叶轮材质多为铸铁或不锈钢。</p>
+                    <div>
+                        <span class="tag">流量 2-80m³/h</span>
+                        <span class="tag">扬程 ≤60m</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <h3>软轴污水泵</h3>
+                    <p>设计用于输送含有固体颗粒、纤维或轻度腐蚀性的污水。泵体流道宽大，采用耐磨耐腐蚀材料，常用于建筑工地排水、市政污水抽送。</p>
+                    <div>
+                        <span class="tag">防堵塞设计</span>
+                        <span class="tag">耐磨材质</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <h3>软轴泥浆泵</h3>
+                    <p>针对高粘度泥浆、矿浆等介质开发，叶轮和泵壳经过特殊强化处理，能够适应高浓度、高磨蚀性工况，是矿山、钻井等领域常用设备。</p>
+                    <div>
+                        <span class="tag">高浓度输送</span>
+                        <span class="tag">抗磨蚀</span>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <h3>软轴油泵</h3>
+                    <p>用于输送润滑油、燃油等石油产品，采用防爆电机或特殊密封结构，确保输送过程安全可靠。适用于油库、锅炉房等场景。</p>
+                    <div>
+                        <span class="tag">防爆可选</span>
+                        <span class="tag">耐油密封</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 选型指南 -->
+    <section class="section guide-section" id="guide">
+        <div class="container">
+            <h2 class="section-title">软轴泵选型要点</h2>
+            <p class="section-sub">正确选型是保证泵高效稳定运行的前提，以下五步助您科学决策</p>
+            <div class="guide-steps">
+                <div class="step-item">
+                    <span class="step-number">1</span>
+                    <h4>明确输送介质</h4>
+                    <p>确定液体的名称、温度、粘度、含固量、腐蚀性等关键参数，这直接决定泵体材质和结构形式的选择。</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">2</span>
+                    <h4>计算流量与扬程</h4>
+                    <p>根据系统所需的最大流量和管路总扬程（包括沿程损失和局部损失），并预留10%-20%的安全余量。</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">3</span>
+                    <h4>确认安装空间</h4>
+                    <p>测量安装区域的尺寸、形状及动力源位置，确定软轴长度和弯曲半径是否满足要求，必要时选择定制软轴。</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">4</span>
+                    <h4>选择驱动方式</h4>
+                    <p>根据现场电源条件或能源情况，选择合适功率的电机或柴油机驱动，同时考虑防爆、防护等级。</p>
+                </div>
+                <div class="step-item">
+                    <span class="step-number">5</span>
+                    <h4>校核材质与密封</h4>
+                    <p>针对介质特性选择泵体、叶轮、软轴及密封件的材质，确保耐腐蚀、耐磨损，保证使用寿命。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 应用场景 -->
+    <section class="section application-section">
+        <div class="container">
+            <h2 class="section-title">软轴泵典型应用领域</h2>
+            <p class="section-sub">灵活的安装方式让软轴泵在众多行业中得到广泛应用</p>
+            <div class="app-grid">
+                <div class="app-item">
+                    <div class="app-icon">🌾</div>
+                    <div class="app-text">
+                        <h3>农业灌溉</h3>
+                        <p>用于农田、果园、温室大棚的灌溉取水，可从水井、水渠、池塘等水源抽水，便携式设计方便移动作业。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">🏗️</div>
+                    <div class="app-text">
+                        <h3>建筑排水</h3>
+                        <p>建筑基坑降水、地下室积水排放、隧道施工排水等，软轴泵可方便地伸入狭窄空间进行抽排水作业。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">🏭</div>
+                    <div class="app-text">
+                        <h3>工业输送</h3>
+                        <p>工厂冷却水循环、锅炉补水、化工液体输送等，根据不同介质选配材质，满足多样化工业需求。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">🏡</div>
+                    <div class="app-text">
+                        <h3>家庭生活</h3>
+                        <p>家庭水井取水、花园浇水、鱼池换水等日常用途，操作简单、噪音低，是家用理想选择。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">⛏️</div>
+                    <div class="app-text">
+                        <h3>矿山矿井</h3>
+                        <p>矿井积水抽排、矿浆输送等工况，耐磨型软轴泵可应对含有固体颗粒的恶劣介质环境。</p>
+                    </div>
+                </div>
+                <div class="app-item">
+                    <div class="app-icon">🚒</div>
+                    <div class="app-text">
+                        <h3>应急排水</h3>
+                        <p>防汛抢险、市政道路积水排除、地下车库应急排水等，快速部署、即时抽排，保障生命财产安全。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 注意事项 -->
+    <section class="section notice-section">
+        <div class="container">
+            <h2 class="section-title">使用与维护注意事项</h2>
+            <p class="section-sub">正确的操作与定期维护能显著延长软轴泵的使用寿命</p>
+            <div class="notice-grid">
+                <div class="notice-card">
+                    <h3>⚠️ 安装要点</h3>
+                    <ul>
+                        <li>软轴弯曲半径不应小于规定最小值，避免过度弯折损坏软轴。</li>
+                        <li>电机与泵体之间距离不宜过长，过长会降低传动效率。</li>
+                        <li>固定好电机底座，防止运转时震动导致软轴接头松动。</li>
+                        <li>泵体浸入液体深度应足够，防止吸入空气产生气蚀。</li>
+                    </ul>
+                </div>
+                <div class="notice-card">
+                    <h3>🔧 日常维护</h3>
+                    <ul>
+                        <li>定期检查软轴表面有无磨损、裂纹，及时更换老化软轴。</li>
+                        <li>检查各处密封圈、机械密封的密封状态，防止泄漏。</li>
+                        <li>保持电机散热良好，避免长时间超负荷运转。</li>
+                        <li>长期停用应排净泵内积液，清洗干净并涂防锈油。</li>
+                    </ul>
+                </div>
+                <div class="notice-card">
+                    <h3>💡 故障排查</h3>
+                    <ul>
+                        <li>不出水：检查是否反转、吸入管是否堵塞、软轴是否断裂。</li>
+                        <li>流量不足：检查叶轮是否磨损、过滤网是否堵塞、转速是否过低。</li>
+                        <li>异常振动：检查地脚螺栓是否松动、软轴是否弯曲、叶轮是否平衡。</li>
+                        <li>噪音过大：检查轴承是否损坏、泵内是否有异物、是否发生气蚀。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+        <div class="container">
+            <h2 class="section-title">软轴泵常见问题解答</h2>
+            <p class="section-sub">收集用户最关心的软轴泵相关问题，为您答疑解惑</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">软轴泵和普通离心泵有什么区别？</div>
+                    <div class="faq-answer">主要区别在于传动方式。普通离心泵通常采用联轴器直接连接或皮带传动，电机与泵体必须保持较好的对中。而软轴泵通过柔性软轴传递动力，电机和泵体可以分开安装，泵体可置于难以直接连接的位置，安装灵活性显著提高，特别适合深井、狭窄空间等特殊场合。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">软轴泵的软轴一般能用多久？</div>
+                    <div class="faq-answer">软轴寿命受到使用频率、弯曲程度、输送介质和保养情况等多方面因素影响。在正常工况并定期保养的前提下，软轴通常可使用1-3年。若使用中频繁过度弯折、输送磨蚀性介质或缺乏润滑保养，寿命会明显缩短。建议定期检查，发现表面有裂纹或明显磨损时及时更换。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">软轴泵可以抽送含沙量较高的水吗？</div>
+                    <div class="faq-answer">可以，但需选用耐磨型软轴泵。普通清水泵抽送含沙水会加速叶轮和泵壳磨损。对于含沙量较高的工况，建议选用叶轮和泵壳采用高铬合金或其他耐磨材质的软轴泥浆泵或耐磨型污水泵。同时适当降低转速或增加维护频率，以延长使用寿命。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何确定软轴泵的安装深度？</div>
+                    <div class="faq-answer">软轴泵的安装深度主要取决于软轴的长度和泵体允许的浸入深度。一般来说，泵体应完全浸入液体中，且进水口距离液面至少0.5米以上，以防止吸入空气。同时软轴长度不宜过长，一般不超过10-15米，否则会增加动力损耗并可能导致软轴扭转振动。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">软轴泵的扬程和流量如何理解？</div>
+                    <div class="faq-answer">扬程是指泵能够将液体提升的最大垂直高度，单位通常为米。流量是指泵在单位时间内输送的液体体积，单位为立方米每小时（m³/h）或升每分钟（L/min）。两者是泵的两个核心性能参数，选型时需要同时满足系统的流量需求和管路所需的总扬程，并考虑一定的余量。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>需要软轴泵选型建议？</h2>
+            <p>联系我们的技术团队，获取免费的专业选型方案和产品报价</p>
+            <a href="#" class="btn btn-light">立即咨询</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>关于我们</h3>
+                    <p>本站专注于软轴泵技术领域，提供产品知识、选型指导、应用方案及行业资讯。我们致力于成为软轴泵用户和从业者获取专业信息的第一站，助力每一台泵高效稳定运行。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">产品中心</a></li>
+                        <li><a href="#">选型指导</a></li>
+                        <li><a href="#">应用案例</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>技术资源</h4>
+                    <ul>
+                        <li><a href="#">工作原理</a></li>
+                        <li><a href="#">维护保养</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">资料下载</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：400-800-1234</li>
+                        <li>邮箱：info@ruanzhoubeng.com</li>
+                        <li>地址：上海市青浦区工业园</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 软轴泵专业信息平台 版权所有 | 沪ICP备00000000号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
