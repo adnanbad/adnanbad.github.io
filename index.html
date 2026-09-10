@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可爱猫咪-萌宠图鉴与养猫知识分享平台</title>
+    <meta name="description" content="可爱猫咪聚集地，这里有超萌猫咪图片、品种科普、养护指南与趣味行为解读。无论你正在吸猫还是准备养猫，都能在这里找到关于可爱猫咪的实用内容。">
+    <meta name="keywords" content="可爱猫咪,猫咪图片,猫咪品种,养猫知识,萌猫,猫咪行为,小猫,吸猫">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #fdf9f3;
+            color: #4a3b32;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: 12px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部页眉 */
+        .site-header {
+            background: #ffffff;
+            box-shadow: 0 2px 12px rgba(233, 174, 154, 0.12);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #fbd9c1;
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            font-size: 32px;
+            background: #ffe8d6;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        .logo-text h1 {
+            font-size: 26px;
+            color: #d2691e;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+        .logo-text p {
+            font-size: 13px;
+            color: #b08b7a;
+            letter-spacing: 1px;
+        }
+        .nav-menu ul {
+            display: flex;
+            gap: 28px;
+        }
+        .nav-menu a {
+            font-weight: 500;
+            color: #5e4b3f;
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            font-size: 16px;
+        }
+        .nav-menu a:hover {
+            color: #d2691e;
+            border-bottom-color: #f0a878;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f7efe8;
+            border-radius: 30px;
+            padding: 4px 6px 4px 16px;
+            border: 1px solid #f0dacb;
+        }
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 14px;
+            width: 150px;
+            color: #5e4b3f;
+        }
+        .search-box button {
+            background: #d2691e;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 6px 16px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .search-box button:hover {
+            background: #b85a14;
+        }
+
+        /* 首屏横幅 */
+        .hero-section {
+            background: linear-gradient(135deg, #fff5ea 0%, #ffe3cf 50%, #ffd2b3 100%);
+            padding: 60px 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            right: -40px;
+            top: -30px;
+            width: 220px;
+            height: 220px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="80" font-size="80">🐈</text></svg>') no-repeat center/contain;
+            opacity: 0.2;
+            transform: rotate(15deg);
+        }
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 400px;
+        }
+        .hero-text h2 {
+            font-size: 42px;
+            color: #b6501a;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: 1px;
+        }
+        .hero-text p {
+            font-size: 18px;
+            max-width: 520px;
+            margin-bottom: 28px;
+            color: #6b4b3a;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #d2691e;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+            transition: 0.2s;
+        }
+        .btn-primary:hover {
+            background: #b85a14;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: #fff;
+            color: #b6501a;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            border: 2px solid #e8b18f;
+            display: inline-block;
+            transition: 0.2s;
+        }
+        .btn-secondary:hover {
+            border-color: #d2691e;
+            background: #fff6ee;
+        }
+        .hero-paw {
+            flex: 0 0 260px;
+            text-align: center;
+            font-size: 110px;
+            line-height: 1;
+            filter: drop-shadow(0 8px 20px rgba(210, 105, 30, 0.2));
+        }
+
+        /* 猫咪品种卡片区 */
+        .section-title {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+        .section-title h2 {
+            font-size: 32px;
+            color: #a84f1e;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .section-title h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #f0a878;
+            border-radius: 3px;
+        }
+        .section-title p {
+            color: #a08372;
+            margin-top: 8px;
+            font-size: 16px;
+        }
+        .breed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 28px;
+            margin-bottom: 20px;
+        }
+        .breed-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 4px 16px rgba(180, 130, 90, 0.08);
+            transition: 0.3s;
+            border: 1px solid #f5e5da;
+            text-align: center;
+        }
+        .breed-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 28px rgba(180, 130, 90, 0.15);
+            border-color: #f0c9ae;
+        }
+        .breed-card .cat-emoji {
+            font-size: 72px;
+            margin-bottom: 10px;
+            background: #fff1e6;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .breed-card h3 {
+            font-size: 20px;
+            color: #a84f1e;
+            margin: 10px 0 8px;
+        }
+        .breed-card p {
+            font-size: 14px;
+            color: #7a6a60;
+            min-height: 60px;
+        }
+        .card-tag {
+            display: inline-block;
+            background: #ffe8d8;
+            color: #b85a14;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* 萌图瀑布流 */
+        .gallery-section {
+            background: #fff;
+            padding: 20px 0 50px;
+            border-radius: 40px 40px 0 0;
+            margin-top: 30px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            background: #fdf3eb;
+            border-radius: 16px;
+            padding: 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: 0.2s;
+        }
+        .gallery-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .gallery-emoji {
+            font-size: 90px;
+            margin-bottom: 10px;
+        }
+        .gallery-item p {
+            font-weight: 600;
+            color: #a05a30;
+            font-size: 15px;
+        }
+        .gallery-item span {
+            font-size: 13px;
+            color: #b39a8b;
+        }
+
+        /* 养猫知识双栏 */
+        .advice-section {
+            padding: 40px 0 50px;
+        }
+        .advice-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        .advice-card {
+            background: #fff;
+            padding: 28px;
+            border-radius: 20px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+            border-left: 5px solid #f0a878;
+        }
+        .advice-card h3 {
+            font-size: 22px;
+            color: #b55a24;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .advice-card ul li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #f3e2d7;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        .advice-card ul li:last-child {
+            border-bottom: none;
+        }
+        .advice-card ul li::before {
+            content: "🐾";
+            flex-shrink: 0;
+        }
+
+        /* 趣味行为解读 */
+        .behavior-section {
+            background: #fff7f0;
+            padding: 40px 0;
+            border-radius: 30px;
+            margin: 20px 0 40px;
+        }
+        .behavior-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .behavior-item {
+            background: white;
+            padding: 22px;
+            border-radius: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            border: 1px solid #f3e0d2;
+        }
+        .behavior-item .icon {
+            font-size: 46px;
+            margin-bottom: 10px;
+        }
+        .behavior-item h4 {
+            color: #b05a24;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        .behavior-item p {
+            font-size: 14px;
+            color: #7d6b60;
+        }
+
+        /* 猫咪冷知识滑动区 */
+        .facts-section {
+            margin: 50px 0;
+        }
+        .facts-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+        .fact-chip {
+            background: #fff;
+            border: 1px solid #f0d7c4;
+            padding: 12px 22px;
+            border-radius: 50px;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: 0.2s;
+        }
+        .fact-chip:hover {
+            background: #ffe9d9;
+            border-color: #dfa37c;
+        }
+
+        /* 常见问题 */
+        .faq-section {
+            padding: 40px 0;
+            background: #fff;
+            border-radius: 30px;
+            margin-bottom: 30px;
+        }
+        .faq-item {
+            max-width: 820px;
+            margin: 0 auto 16px;
+            background: #fdf8f3;
+            border-radius: 14px;
+            padding: 6px 22px;
+            border: 1px solid #f2e2d6;
+        }
+        .faq-question {
+            font-weight: 600;
+            padding: 14px 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #7a4a2c;
+        }
+        .faq-question::after {
+            content: "+";
+            font-size: 24px;
+            color: #d4946a;
+        }
+        .faq-answer {
+            padding: 0 0 18px;
+            color: #6e5a4e;
+            font-size: 15px;
+            border-top: 1px dashed #ead7c8;
+            padding-top: 12px;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #3b2c24;
+            color: #d9c2b2;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            border-radius: 30px 30px 0 0;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .footer-about {
+            max-width: 320px;
+        }
+        .footer-about h3 {
+            color: #f5c9a8;
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+        .footer-about p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+        .footer-links h4, .footer-contact h4 {
+            color: #f5c9a8;
+            margin-bottom: 14px;
+            font-size: 18px;
+        }
+        .footer-links li {
+            padding: 4px 0;
+        }
+        .footer-links a {
+            color: #cbb09f;
+            font-size: 14px;
+        }
+        .footer-links a:hover {
+            color: #ffd9b8;
+        }
+        .footer-contact p {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #5b463a;
+            padding-top: 20px;
+            font-size: 13px;
+            color: #a58e7e;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu ul {
+                justify-content: center;
+                gap: 16px;
+                flex-wrap: wrap;
+            }
+            .search-box {
+                margin-top: 6px;
+            }
+            .hero-text h2 {
+                font-size: 32px;
+            }
+            .hero-paw {
+                display: none;
+            }
+            .advice-layout {
+                grid-template-columns: 1fr;
+            }
+            .section-title h2 {
+                font-size: 26px;
+            }
+            .gallery-emoji {
+                font-size: 70px;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+        @media (max-width: 480px) {
+            .search-box input {
+                width: 110px;
+            }
+            .breed-card .cat-emoji {
+                width: 90px;
+                height: 90px;
+                font-size: 54px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">😺</div>
+                <div class="logo-text">
+                    <h1>可爱猫咪</h1>
+                    <p>萌宠图鉴 · 知识分享</p>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">猫咪图鉴</a></li>
+                    <li><a href="#">品种大全</a></li>
+                    <li><a href="#">养护课堂</a></li>
+                    <li><a href="#">趣味行为</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索猫咪...">
+                <button>搜猫</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h2>欢迎来到软萌猫咪世界</h2>
+                    <p>这里有超多可爱猫咪的萌照、品种科普、喂养技巧和日常趣事。无论你是资深猫奴还是初次想养猫，都能找到你需要的内容。</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn-primary">🐱 开始吸猫</a>
+                        <a href="#" class="btn-secondary">📖 养猫指南</a>
+                    </div>
+                </div>
+                <div class="hero-paw">
+                    🐾
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门品种 -->
+        <section class="container">
+            <div class="section-title">
+                <h2>人气猫咪品种</h2>
+                <p>性格各异的可爱猫咪，看看哪款适合你</p>
+            </div>
+            <div class="breed-grid">
+                <div class="breed-card">
+                    <div class="cat-emoji">😻</div>
+                    <h3>英国短毛猫</h3>
+                    <p>圆脸大眼，性格温顺安静，适应力强，是很多家庭的理想伴侣。</p>
+                    <span class="card-tag">温顺 · 易饲养</span>
+                </div>
+                <div class="breed-card">
+                    <div class="cat-emoji">🐱</div>
+                    <h3>美国短毛猫</h3>
+                    <p>身体健康，活泼好动，与孩子相处融洽，被称为“工作猫”的后代。</p>
+                    <span class="card-tag">活泼 · 亲人</span>
+                </div>
+                <div class="breed-card">
+                    <div class="cat-emoji">🐈</div>
+                    <h3>布偶猫</h3>
+                    <p>蓝眼长毛，性格粘人，喜欢被抱着，像布偶一样柔软可爱。</p>
+                    <span class="card-tag">粘人 · 优雅</span>
+                </div>
+                <div class="breed-card">
+                    <div class="cat-emoji">😽</div>
+                    <h3>中华田园猫</h3>
+                    <p>体质强健，聪明独立，花色多样，是性价比超高的可爱选择。</p>
+                    <span class="card-tag">皮实 · 聪明</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 萌图欣赏 -->
+        <section class="gallery-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>今日萌猫瞬间</h2>
+                    <p>每一张都是治愈系可爱猫咪</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-emoji">😸</div>
+                        <p>微笑天使</p>
+                        <span>心情超好的一天</span>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-emoji">😺</div>
+                        <p>好奇宝宝</p>
+                        <span>在看什么呢</span>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-emoji">🙀</div>
+                        <p>惊讶表情包</p>
+                        <span>发生了什么</span>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-emoji">😿</div>
+                        <p>委屈巴巴</p>
+                        <span>求抱抱</span>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-emoji">😹</div>
+                        <p>开心到变形</p>
+                        <span>逗猫棒真好玩</span>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-emoji">🐈</div>
+                        <p>优雅睡姿</p>
+                        <span>午安啦</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 养猫知识双栏 -->
+        <section class="advice-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>新手养猫必备知识</h2>
+                    <p>给可爱猫咪一个温暖的家</p>
+                </div>
+                <div class="advice-layout">
+                    <div class="advice-card">
+                        <h3>🏠 接猫前准备</h3>
+                        <ul>
+                            <li>准备好猫砂盆、猫抓板、食盆水盆等基础用品</li>
+                            <li>将家中危险物品收好，封好窗户防止意外</li>
+                            <li>选择适合幼猫或成猫的优质猫粮</li>
+                            <li>预留一个安静角落作为猫咪的躲避空间</li>
+                            <li>了解附近靠谱的宠物医院以备不时之需</li>
+                        </ul>
+                    </div>
+                    <div class="advice-card">
+                        <h3>🍗 日常喂养建议</h3>
+                        <ul>
+                            <li>定时定量喂食，避免猫咪肥胖问题</li>
+                            <li>保证充足清洁的饮水，可设置流动饮水机</li>
+                            <li>偶尔提供水煮鸡胸肉、蛋黄等健康零食</li>
+                            <li>不要喂食巧克力、洋葱、葡萄等危险食物</li>
+                            <li>定期更换猫砂，保持环境干净卫生</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 趣味行为解读 -->
+        <section class="behavior-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>猫咪行为小秘密</h2>
+                    <p>读懂可爱猫咪的肢体语言</p>
+                </div>
+                <div class="behavior-grid">
+                    <div class="behavior-item">
+                        <div class="icon">🧶</div>
+                        <h4>踩奶</h4>
+                        <p>猫咪用前爪有节奏地按压柔软物体，代表它感到非常放松和安全，仿佛回到了幼年时光。</p>
+                    </div>
+                    <div class="behavior-item">
+                        <div class="icon">📦</div>
+                        <h4>喜欢钻箱子</h4>
+                        <p>狭小空间能给猫咪带来安全感，纸箱的隔绝感让它们觉得既隐蔽又舒适。</p>
+                    </div>
+                    <div class="behavior-item">
+                        <div class="icon">🔄</div>
+                        <h4>蹭你</h4>
+                        <p>猫咪用脸颊蹭你，其实是在用气味腺标记“你属于我”，是表达亲昵和领地意识的方式。</p>
+                    </div>
+                    <div class="behavior-item">
+                        <div class="icon">😾</div>
+                        <h4>呼噜声</h4>
+                        <p>呼噜声不只代表开心，在紧张或疼痛时也可能发出，是猫咪自我安抚的一种方式。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 冷知识 -->
+        <section class="facts-section container">
+            <div class="section-title">
+                <h2>关于可爱猫咪的趣味事实</h2>
+                <p>这些小知识让你更懂它们</p>
+            </div>
+            <div class="facts-list">
+                <span class="fact-chip">🐾 猫咪每天平均睡眠12-16小时</span>
+                <span class="fact-chip">👂 猫咪耳朵可以旋转180度</span>
+                <span class="fact-chip">💕 猫咪的心跳比人类快两倍</span>
+                <span class="fact-chip">🦷 成年猫有30颗牙齿</span>
+                <span class="fact-chip">🌙 猫咪是晨昏性动物，黎明和黄昏最活跃</span>
+                <span class="fact-chip">🧠 猫的大脑结构和人类相似度很高</span>
+            </div>
+        </section>
+
+        <!-- 常见问题 -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>铲屎官高频疑问</h2>
+                    <p>关于可爱猫咪，你可能想知道</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">猫咪为什么总爱打翻桌上的东西？</div>
+                    <div class="faq-answer">这其实是猫咪探索本能和捕猎练习的表现。它们用爪子触碰物体来测试反应，如果东西掉落并发出声响，会激发它们的好奇心。建议将易碎物品收好，多准备一些可抓咬的玩具满足它的探索欲。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何让猫咪更亲近我？</div>
+                    <div class="faq-answer">尊重猫咪的节奏很重要。不要强行抱它，可以蹲下来与它平视，慢慢眨眼传达善意。每天固定时间用逗猫棒陪玩，并亲手喂食零食，逐渐建立起信任和积极的关联。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">猫咪需要经常洗澡吗？</div>
+                    <div class="faq-answer">猫咪会花大量时间自我清洁，通常不需要频繁洗澡。过于频繁洗澡会破坏皮肤油脂，导致干燥或皮肤病。一般建议2-3个月洗一次即可，长毛猫可适当增加频率，但也要视情况而定。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">养猫对居住空间有要求吗？</div>
+                    <div class="faq-answer">猫咪对空间大小其实不算苛刻，但需要垂直空间和躲藏处。即使房间不大，设置猫爬架、纸箱或者高处的休息点，都能让猫咪感到满足和安心。封窗是必须的安全措施。</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>关于可爱猫咪</h3>
+                    <p>我们致力于分享可爱猫咪的萌趣日常、品种知识与科学养护方法。希望每一位爱猫人都能在这里找到温暖与快乐，也帮助更多猫咪找到幸福的家。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">猫咪图鉴</a></li>
+                        <li><a href="#">品种百科</a></li>
+                        <li><a href="#">健康养护</a></li>
+                        <li><a href="#">萌图投稿</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>联系交流</h4>
+                    <p>📧 hello@cute-cat.example.com</p>
+                    <p>💬 微信公众号：可爱猫咪星球</p>
+                    <p>🐾 一起分享你的猫主子靓照吧</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 可爱猫咪 · 用心爱每一只猫 | 本站内容仅供参考，不构成专业建议</p>
+            </div>
+        </div>
+    </footer>
+</body>
+              </html>
